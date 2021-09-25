@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Expanding Gallery Images</title>
+  </head>
+  <body>
+    <div class="gallery">
+      <div class="container">
+        <div class="panel active" style="background-image: url('images/1.jpg')">
+          <h2>City01</h2>
+        </div>
+        <div class="panel" style="background-image: url('images/2.jpg')">
+          <h2>City02</h2>
+        </div>
+        <div class="panel" style="background-image: url('images/3.jpg')">
+          <h2>City03</h2>
+        </div>
+        <div class="panel" style="background-image: url('images/4.jpg')">
+          <h2>City04</h2>
+        </div>
+        <div class="panel" style="background-image: url('images/5.jpg')">
+          <h2>City05</h2>
+        </div>
+      </div>
+      <div class="slider">
+        <div class="arrow arrow-left" onclick="changepic('prev')"></div>
+        <div class="arrow arrow-right" onclick="changepic('next')"></div>
+      </div>
+    </div>
+  </body>
+</html>

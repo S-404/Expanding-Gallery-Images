@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Ubuntu', sans-serif;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  overflow: hidden;
+  margin: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 0, 20, 0.8085434857536764) 0%,
+    rgba(116, 15, 208, 0.8701681356136204) 34%,
+    rgba(143, 3, 187, 1) 100%
+  );
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.5s ease-in;
+}
+
+.panel h2 {
+  font-size: 34px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h2 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.slider {
+  display: block;
+  align-items: center;
+
+  position: fixed;
+  left: 45vw;
+  height: 60px;
+}
+
+.arrow {
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.arrow-right:hover {
+  border-left: 20px solid royalblue;
+  transition: border-left 0.3s ease-in;
+}
+.arrow-left:hover {
+  border-right: 20px solid royalblue;
+  transition: border-right 0.3s ease-in;
+}
+.arrow-right {
+  border-left: 20px solid cyan;
+  transition: border-left 0.3s ease-in;
+}
+
+.arrow-left {
+  border-right: 20px solid cyan;
+  transition: border-right 0.3s ease-in;
+}
