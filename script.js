@@ -48,13 +48,12 @@ function updSliderPosition() {
   slidePosition.style.width =
     ((actives.length - 1) / (dots.length - 1)) * 100 + '%';
 
+  prevBtn.disabled = false;
+  nextBtn.disabled = false;
   if (currentPosition === 1) {
     prevBtn.disabled = true;
   } else if (currentPosition === dots.length) {
     nextBtn.disabled = true;
-  } else {
-    prevBtn.disabled = false;
-    nextBtn.disabled = false;
   }
 }
 
