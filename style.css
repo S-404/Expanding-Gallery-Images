@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 95vh;
+  height: 100vh;
   overflow: hidden;
   margin: 0;
   background: linear-gradient(
@@ -26,7 +26,7 @@ body {
 
 .container {
   display: flex;
-  width: 90vw;
+  width: 80vw;
 }
 
 .panel {
@@ -89,7 +89,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   height: 4px;
-  width: 50%;
+  width: 0%;
   z-index: -1;
   transition: 0.4s ease;
 }
@@ -116,6 +116,7 @@ body {
   align-items: center;
   justify-content: center;
   border: 5px solid var(--line-border-empty);
+  transition: 0.4s ease;
 }
 
 .dot.active {
@@ -128,9 +129,9 @@ body {
   border: 0;
   border-radius: 6px;
   cursor: pointer;
-  padding: 4px 30px;
+  padding: 2px 30px;
   margin: 4px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
 }
 
