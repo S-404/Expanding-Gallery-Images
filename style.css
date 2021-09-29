@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root {
+  --line-border-empty: rgb(134, 85, 248);
+  --line-border-fill: rgb(190, 231, 250);
+}
+
 * {
   box-sizing: border-box;
 }
 body {
   font-family: 'Ubuntu', sans-serif;
-
   display: flex;
-
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 95vh;
   overflow: hidden;
   margin: 0;
   background: linear-gradient(
@@ -57,40 +61,86 @@ body {
   transition: opacity 0.3s ease-in 0.4s;
 }
 
-.slider {
-  display: block;
+.slider,
+.btns {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.slider-container,
+.btns-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-bottom: 10px;
+  max-width: 100%;
+  width: 30vw;
+}
+
+.btns-container {
+  width: 200px;
+}
+
+.position {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 50%;
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.slider-container::before {
+  content: '';
+  background-color: var(--line-border-empty);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+.dot {
+  background-color: var(--line-border-empty);
+  color: #000;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  display: flex;
   align-items: center;
-
-  position: fixed;
-  left: 45vw;
-  height: 60px;
+  justify-content: center;
+  border: 5px solid var(--line-border-empty);
 }
 
-.arrow {
+.dot.active {
+  border-color: var(--line-border-fill);
+  color: #fff;
+}
+
+.btn {
+  background-color: var(--line-border-fill);
+  border: 0;
+  border-radius: 6px;
   cursor: pointer;
-  margin-left: 20px;
-  margin-right: 20px;
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-top: 20px solid transparent;
-  border-bottom: 20px solid transparent;
+  padding: 4px 30px;
+  margin: 4px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-.arrow-right:hover {
-  border-left: 20px solid royalblue;
-  transition: border-left 0.3s ease-in;
+.btn:active {
+  transform: scale(0.95);
 }
-.arrow-left:hover {
-  border-right: 20px solid royalblue;
-  transition: border-right 0.3s ease-in;
+.btn:focus {
+  outline: 0;
 }
-.arrow-right {
-  border-left: 20px solid cyan;
-  transition: border-left 0.3s ease-in;
-}
-
-.arrow-left {
-  border-right: 20px solid cyan;
-  transition: border-right 0.3s ease-in;
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  cursor: not-allowed;
 }

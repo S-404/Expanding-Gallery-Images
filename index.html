@@ -28,8 +28,20 @@
         </div>
       </div>
       <div class="slider">
-        <div class="arrow arrow-left" onclick="changepic('prev')"></div>
-        <div class="arrow arrow-right" onclick="changepic('next')"></div>
+        <div class="slider-container">
+          <div class="position" id="position"></div>
+          <div class="dot active"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div>
+      <div class="btns">
+        <div class="btns-container">
+          <button class="btn" disabled id="prev">Prev</button>
+          <button class="btn" id="next">Next</button>
+        </div>
       </div>
     </div>
   </body>
