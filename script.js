@@ -20,7 +20,6 @@ nextBtn.addEventListener('click', () => {
   if (currentPosition > dots.length) {
     currentPosition = dots.length;
   }
-  console.log(currentPosition);
   updSliderPosition();
   changepic('next');
 });
