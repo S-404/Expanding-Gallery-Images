@@ -3,6 +3,26 @@ const slidePosition = document.getElementById('position');
 const prevBtn = document.getElementById('prev');
 const nextBtn = document.getElementById('next');
 const dots = document.querySelectorAll('.dot');
+const loadText = document.querySelector('.loading-text');
+const gallery = document.querySelector('.gallery');
+
+let load = 0;
+let loadInterval = setInterval(blurryloading, 20);
+function blurryloading() {
+  load++;
+  if (load > 99) {
+    clearInterval(loadInterval);
+    loadText.style.display = 'none';
+  }
+
+  const scale = (val, in_min, in_max, out_min, out_max) => {
+    return ((val - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+  };
+
+  loadText.innerText = `${load}%`;
+  loadText.style.opacity = scale(load, 0, 100, 1, 0);
+  gallery.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`;
+}
 
 let currentPosition = 1;
 

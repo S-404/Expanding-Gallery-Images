@@ -24,6 +24,19 @@ body {
   );
 }
 
+/* blurry loading */
+.loading-text {
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+}
+.gallery {
+  filter: blur(0px);
+}
+
+/*expanded images*/
 .gallery-container {
   display: flex;
   width: 80vw;
@@ -61,6 +74,7 @@ body {
   transition: opacity 0.3s ease-in 0.4s;
 }
 
+/*image switcher*/
 .slider,
 .btns {
   text-align: center;
@@ -146,6 +160,7 @@ body {
   cursor: not-allowed;
 }
 
+/*adaptive layout*/
 @media (max-width: 480px) {
   .gallery-container {
     width: 90vw;
